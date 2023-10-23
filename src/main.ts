@@ -1,6 +1,7 @@
-import { getCustomerId } from './customer-tools.ts';
-import * as customertools from './customer-tools.ts';
 import './style.css'
+import { getCustomerId } from './customer-tools';
+import * as customertools from './customer-tools';
+import Header from './components/Header';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <h1>Test Imports</h1>
@@ -10,6 +11,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   </li>
   <li>import * as customer-tools from './customer-tools';
       <div>${customertools.getCustomers().length} customers</div>
+  </li>
+  <li>import Header from './components/Header';
+    ${Header()}
   </li>
 
 </ol>
