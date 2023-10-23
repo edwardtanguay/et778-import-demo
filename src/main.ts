@@ -1,9 +1,10 @@
-import './style.css'
 import { getCustomerId } from './customer-tools';
 import * as customertools from './customer-tools';
 import Header from './components/Header';
+import frameworks from './data/framework.json';
+import './style.css'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = /*html*/ `
 <h1>Test Imports</h1>
 <ol>
   <li>import { getCustomerId } from './customer-tools';
@@ -15,6 +16,15 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <li>import Header from './components/Header';
     ${Header()}
   </li>
-
-</ol>
-`
+  <li>import frameworks from './data/framework.json';
+    <div>
+    ${frameworks.map(fw => {
+  return `<div>${fw.name}</div>`
+}).join('')}
+    </div>
+  </li>
+  <li>import './style.css'
+    <div>(see above)</div>
+  </li>
+  </ol>
+    `
